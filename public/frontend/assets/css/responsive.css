@@ -1,0 +1,25 @@
+@media only screen and (max-width: 768px){
+    .close {
+        top: 80px;
+        right: 0px;
+    }
+}
+
+@media print{
+    .career-menu,hr,.breadcrumbs,#header,#footer,.logindetails{
+        display: none !important;
+    }
+    hr:last-child{
+        display: block !important;
+    }
+    h3{
+        background-color: rgb(145, 14, 14) !important;
+        opacity: .5;
+        display: block;
+    }
+    .signature p{
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+        margin-top: 10px;
+    }
+}
