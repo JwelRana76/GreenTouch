@@ -16,6 +16,7 @@
           <li><a href="{{ route('vision') }}">Vision</a></li>
           <li><a href="{{ route('our_project') }}">Our Project</a></li>
           <li><a href="{{ route('contact') }}">Contact</a></li>
+          <li><a href="{{ route('our_team') }}">Our Team</a></li>
           <li><a href="{{ route('gallery') }}">Gallery</a></li>
           <li><a href="{{ route('career') }}">Career</a></li>
 

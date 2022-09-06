@@ -48,8 +48,12 @@ Route::get('/mission',[frontendController::class, 'mission'])->name('mission');
 Route::get('/vision',[frontendController::class, 'vision'])->name('vision');
 Route::get('/our_project',[frontendController::class, 'our_project'])->name('our_project');
 Route::get('/contact',[frontendController::class, 'contact'])->name('contact');
+Route::get('/our_team',[frontendController::class, 'our_team'])->name('our_team');
 Route::get('/gallery',[frontendController::class, 'gallery'])->name('gallery');
 Route::get('/career',[frontendController::class, 'career'])->name('career');
+
+// our team seacrh section
+Route::get('our_team/search/{search}',[frontendController::class, 'getTeam'])->name('getTeam');
 
 Route::middleware('auth')->group(function(){
     Route::get('/pdf',function(){

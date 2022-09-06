@@ -16,16 +16,22 @@
                         <input value="{{ old('name') }}" type="text" name="name" id="name" class="form-control" placeholder="Enter Tile" required>
                         <span class="text-danger">@error('name'){{ $message }}@enderror</span>
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3">
                         <label for="email" class="label-control">Email</label>
                         <input value="{{ old('email') }}" type="text" name="email" id="email" class="form-control" placeholder="Enter Tile" required>
                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3">
                         <label for="contact" class="label-control">Contact</label>
                         <input value="{{ old('contact') }}" type="text" name="contact" id="contact" class="form-control" placeholder="Enter Tile" required>
                         <span class="text-danger">@error('contact'){{ $message }}@enderror</span>
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3">
                         <label for="photo" class="label-control">Photo</label>
                         <input type="file" name="photo" id="photo" class="form-control" required>
@@ -38,15 +44,41 @@
                         <input value="{{ old('designation') }}" type="text" name="designation" id="designation" class="form-control" placeholder="Enter Tile" required>
                         <span class="text-danger">@error('designation'){{ $message }}@enderror</span>
                     </div>
-                    <div class="mb-3">
-                        <label for="address" class="label-control">address</label>
-                        <textarea class="form-control" name="address" id="address" cols="30" rows="2" required>{{ old('address') }}</textarea>
-                        <span class="text-danger">@error('address'){{ $message }}@enderror</span>
-                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3">
                         <label for="facebook" class="label-control">Facebook</label>
                         <input value="{{ old('facebook') }}" type="text" name="facebook" id="facebook" class="form-control" placeholder="Enter Tile" required>
                         <span class="text-danger">@error('facebook'){{ $message }}@enderror</span>
+                    </div>
+                </div>
+                <h6>Address</h6>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="village" class="label-control">village</label>
+                        <textarea class="form-control" name="village" id="village" cols="30" rows="2" required>{{ old('village') }}</textarea>
+                        <span class="text-danger">@error('village'){{ $message }}@enderror</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="post_office" class="label-control">Post Office</label>
+                        <textarea class="form-control" name="post_office" id="post_office" cols="30" rows="2" required>{{ old('post_office') }}</textarea>
+                        <span class="text-danger">@error('post_office'){{ $message }}@enderror</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="police_station" class="label-control">Police Station</label>
+                        <textarea class="form-control" name="police_station" id="police_station" cols="30" rows="2" required>{{ old('police_station') }}</textarea>
+                        <span class="text-danger">@error('police_station'){{ $message }}@enderror</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="district" class="label-control">District</label>
+                        <textarea class="form-control" name="district" id="district" cols="30" rows="2" required>{{ old('district') }}</textarea>
+                        <span class="text-danger">@error('district'){{ $message }}@enderror</span>
                     </div>
                 </div>
             </div>

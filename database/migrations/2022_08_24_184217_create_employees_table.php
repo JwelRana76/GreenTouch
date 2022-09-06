@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        // name','email','contact','photo','facebook','designation','village','post_office','police_station','district'
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -21,7 +22,10 @@ return new class extends Migration
             $table->string('designation');
             $table->string('facebook')->nullable();
             $table->string('photo')->nullable();
-            $table->string('address');
+            $table->string('village');
+            $table->string('post_office');
+            $table->string('police_station');
+            $table->string('district');
             $table->timestamps();
         });
     }
