@@ -25,7 +25,7 @@ class frontendController extends Controller
     public function about()
     {
         $generalSetting = GeneralSetting::where('id',1)->first();
-        return view('frontend.about',compact('employee','generalSetting'));
+        return view('frontend.about',compact('generalSetting'));
     }
     public function mission()
     {
@@ -50,7 +50,7 @@ class frontendController extends Controller
     }
     public function our_team()
     {
-        $employee = Employee::all();
+        $employee = Employee::distinct()->get(['police_station']);
         return view('frontend.our_team',compact('employee'));
     }
     public function gallery()
@@ -61,7 +61,7 @@ class frontendController extends Controller
     }
     public function career()
     {
-        // $generalSetting = GeneralSetting::where('id',1)->first();
+        $generalSetting = GeneralSetting::where('id',1)->first();
         $dn = date('Y-m-d');  
         $jobCircular = Circular::where('is_active','=',1)->orderBy('id','desc')->whereDate('death_line', '>=',$dn)->get();
         return view('frontend.career.index',compact('generalSetting','jobCircular'));
@@ -74,7 +74,7 @@ class frontendController extends Controller
             $our_team = Employee::all();
             return response()->json(['data'=>$our_team]);
         }else{
-            $our_team = Employee::where('address','LIKE',$search)->get();
+            $our_team = Employee::where('police_station',$search)->get();
             return response()->json(['data'=>$our_team]);
         }
         

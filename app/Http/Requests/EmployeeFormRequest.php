@@ -40,10 +40,6 @@ class EmployeeFormRequest extends FormRequest
                 'required',
                 'string'
             ],
-            'address'=>[
-                'required',
-                'string'
-            ],
             'facebook'=>[
                 'nullable',
             ],
@@ -51,6 +47,23 @@ class EmployeeFormRequest extends FormRequest
                 'nullable',
                 'mimes:png,jpg'
             ],
+            'village'=>[
+                'required',
+                'string'
+            ],
+            'post_office'=>[
+                'required',
+                'string'
+            ],
+            'police_station'=>[
+                'required',
+                'string'
+            ],
+            'district'=>[
+                'required',
+                'string'
+            ],
+
         ];
     }
 }

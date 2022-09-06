@@ -9,7 +9,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="{{ route('index') }}" class="active">Home</a></li>
+          <li><a href="{{ route('index') }}">Home</a></li>
 
           <li><a href="{{ route('about') }}">About</a></li>
           <li><a href="{{ route('mission') }}">Mission</a></li>
@@ -26,8 +26,12 @@
 
       <div class="header-social-links d-flex">
         <a href="https://www.facebook.com/{{ $generalSetting->facebook }}" target="_blank" class="facebook"><i class="bu bi-facebook"></i></a>
-        <a href="https://www.youtube.com/{{ $generalSetting->youtube }}" class="linkedin"><i class="bu bi-youtube"></i></i></a>
+        <a href="https://www.youtube.com/{{ $generalSetting->youtube }}" target="_blank" class="linkedin"><i class="bu bi-youtube"></i></i></a>
       </div>
 
     </div>
   </header><!-- End Header -->
+  @push('frontend_script')
+    <script>
+    </script>
+  @endpush

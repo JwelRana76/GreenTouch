@@ -2321,7 +2321,7 @@ section {
   padding: 0;
 }
 .career-content{
-  background: url("../img/about.jpg") no-repeat;
+  background: url("../img/slider-3.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
 
@@ -2351,6 +2351,10 @@ section {
   padding: 200px 0;
   text-align: center;
   display: block;
+  
+}
+.career-content h3{
+  color: white;
 }
 .educational-info tr th{
   font-size: 14px;

@@ -26,7 +26,9 @@
         <div class="mb-3 w-25 m-auto">
           <select name="policeStSion" id="policeStSion" class="form-control">
             <option value="all">All</option>
-            <option value="taraganj">taraganj</option>
+            @foreach ($employee as $employee)
+              <option value="{{ $employee->police_station }}">{{ $employee->police_station }}</option>
+            @endforeach
           </select>
         </div>
       </div>
@@ -34,18 +36,7 @@
           @foreach ($employee as $employee)
               
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-              <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                  <img src="{{ asset('storage/uploads/employee').'/'.$employee->photo }}" class="img-fluid" alt="">
-                  <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  </div>
-              </div>
-              <div class="member-info">
-                  <h4>{{ $employee->name }}</h4>
-                  <span>{{ $employee->designation }}</span>
-              </div>
-              </div>
+              
           </div>
   
           @endforeach
@@ -55,32 +46,47 @@
 @endsection
 @push('frontend_script')
   <script>
-    $('#policeStSion').change(function (e) { 
-      e.preventDefault();
-      var menu = $(this).val();
-      $.ajax({
-        type: "GET",
-        url: "/our_team/search/"+menu,
-        dataType: "json",
-        success: function (response) {
-          $.each(response.data, function (key, item) { 
-             $('#ourTeam').append(`<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-              <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                  <img src="{{ asset('storage/uploads/employee/`+item.photo+`') }}" class="img-fluid" alt="">
-                  <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  </div>
-              </div>
-              <div class="member-info">
-                  <h4>`+item.name+`</h4>
-                  <span>`+item.designation+`</span>
-              </div>
-              </div>
-          </div>`);
-          });
-        }
+    $(document).ready(function () {
+      var search = 'all';
+      fatchTeam(search)
+
+
+      $('#policeStSion').change(function (e) { 
+        e.preventDefault();
+        var search = $(this).val();
+        fatchTeam(search)
       });
+
+
+      function fatchTeam(search){
+        var menu = search;
+          $.ajax({
+            type: "GET",
+            url: "/our_team/search/"+menu,
+            dataType: "json",
+            success: function (response) {
+              
+              $('#ourTeam').html("");
+              $.each(response.data, function (key, item) { 
+                $('#ourTeam').append(`<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                  <div class="member" data-aos="fade-up" style="width:100%">
+                  <div class="member-img">
+                      <img src="{{ asset('storage/uploads/employee/`+item.photo+`') }}" class="img-fluid" alt="" style="height:250px;width:100%">
+                      <div class="social">
+                      <a href="https://www.facebook.com/`+item.facebook+`"><i class="bi bi-facebook"></i></a>
+                      </div>
+                  </div>
+                  <div class="member-info">
+                      <h4>`+item.name+`</h4>
+                      <span>`+item.designation+`</span>
+                  </div>
+                  </div>
+              </div>`);
+              });
+            }
+          });
+      }
     });
+
   </script>
 @endpush

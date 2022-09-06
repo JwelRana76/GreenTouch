@@ -43,7 +43,7 @@ class EmployeeController extends Controller
         if ($request->hasFile('photo')) {
             $destination = 'public/uploads/employee';
             $photo = $request->photo;
-            $name = time().$photo->getClientOriginalExtension();
+            $name = time().'.'.$photo->getClientOriginalExtension();
             $photo->storeAs($destination,$name);
             $input['photo'] = $name;
         }

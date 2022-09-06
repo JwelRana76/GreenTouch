@@ -48,36 +48,36 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="facebook" class="label-control">Facebook</label>
-                        <input value="{{ old('facebook') }}" type="text" name="facebook" id="facebook" class="form-control" placeholder="Enter Tile" required>
+                        <input value="{{ old('facebook') }}" type="text" name="facebook" id="facebook" class="form-control" placeholder="Enter Tile">
                         <span class="text-danger">@error('facebook'){{ $message }}@enderror</span>
                     </div>
                 </div>
                 <h6>Address</h6>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="village" class="label-control">village</label>
-                        <textarea class="form-control" name="village" id="village" cols="30" rows="2" required>{{ old('village') }}</textarea>
+                        <label for="village" class="label-control">Village</label>
+                        <textarea class="form-control" name="village" id="village" cols="30" rows="1" required>{{ old('village') }}</textarea>
                         <span class="text-danger">@error('village'){{ $message }}@enderror</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="post_office" class="label-control">Post Office</label>
-                        <textarea class="form-control" name="post_office" id="post_office" cols="30" rows="2" required>{{ old('post_office') }}</textarea>
+                        <textarea class="form-control" name="post_office" id="post_office" cols="30" rows="1" required>{{ old('post_office') }}</textarea>
                         <span class="text-danger">@error('post_office'){{ $message }}@enderror</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="police_station" class="label-control">Police Station</label>
-                        <textarea class="form-control" name="police_station" id="police_station" cols="30" rows="2" required>{{ old('police_station') }}</textarea>
+                        <textarea class="form-control" name="police_station" id="police_station" cols="30" rows="1" required>{{ old('police_station') }}</textarea>
                         <span class="text-danger">@error('police_station'){{ $message }}@enderror</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="district" class="label-control">District</label>
-                        <textarea class="form-control" name="district" id="district" cols="30" rows="2" required>{{ old('district') }}</textarea>
+                        <textarea class="form-control" name="district" id="district" cols="30" rows="1" required>{{ old('district') }}</textarea>
                         <span class="text-danger">@error('district'){{ $message }}@enderror</span>
                     </div>
                 </div>

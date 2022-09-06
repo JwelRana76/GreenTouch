@@ -7,7 +7,7 @@
         </h4>
     </div>
     <div class="card-body">
-        <table class="table table-striped">
+        <table class="table table-striped" id="employee">
             <thead>
                 <tr>
                     <th>Sl No</th>
@@ -45,3 +45,12 @@
     </div>
 </div>
 @endsection
+@push('custom-scripts')
+<script>
+    $(document).ready( function () {
+        $('#employee').DataTable({
+            info: false,
+        });
+    } );
+</script>
+@endpush
