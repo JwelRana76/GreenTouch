@@ -9,7 +9,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="{{ route('index') }}">Home</a></li>
+          <li><a href="{{ route('index') }}" class="fisrt-child">Home</a></li>
 
           <li><a href="{{ route('about') }}">About</a></li>
           <li><a href="{{ route('mission') }}">Mission</a></li>
@@ -33,5 +33,18 @@
   </header><!-- End Header -->
   @push('frontend_script')
     <script>
+      $(document).ready(function () {
+        const activePage = window.location.pathname;
+        const navlinks = document.querySelectorAll('nav ul a')
+        .forEach(link => {
+          if(link.href.includes(`${activePage}`)) {
+            if(activePage === '/'){
+              $('.fisrt-child').addClass('active');
+            }else{
+              link.classList.add('active');
+            }
+          }
+        });
+      });
     </script>
   @endpush
